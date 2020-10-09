@@ -2,27 +2,11 @@
   display: flex;
   text-align: center;
 }
-
 .dialogs__items {
   width: 30%;
   border-right: rgb(109, 124, 104) dashed;
   border-left: rgb(109, 124, 104) solid;
 }
-.dialogs__item {
-  padding: 10px;
-  text-decoration: none;
-}
-.dialogs__item a {
-  text-decoration: none;
-}
-.dialogs__active {
-  color: goldenrod;
-  text-transform: uppercase;
-}
-
 .dialogs__messages {
   width: 70%;
-}
-.dialogs__message {
-  padding: 10px;
 }

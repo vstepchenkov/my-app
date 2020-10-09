@@ -1,0 +1,11 @@
+.dialogs__item {
+  padding: 10px;
+  text-decoration: none;
+}
+.dialogs__item a {
+  text-decoration: none;
+}
+.dialogs__active {
+  color: goldenrod;
+  text-transform: uppercase;
+}
