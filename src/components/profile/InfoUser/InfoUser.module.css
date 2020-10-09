@@ -1,0 +1,10 @@
+.aboutUser {
+  display: grid;
+  grid-template-columns: 20% 50%;
+}
+.avatarPhoto {
+  width: 150px;
+}
+.dataUser {
+  margin-left: 150px;
+}
