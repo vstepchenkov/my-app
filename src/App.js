@@ -5,17 +5,29 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import NavBar from "./components/navbar/NavBar";
+
 import Profile from "./components/profile/Profile";
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className="wrapper">
         <Header />
         <NavBar />
         <div className="content">
-          <Route path="/dialogs" component={Dialogs} />
-          <Route path="/profile" component={Profile} />
+          <Route
+            path="/dialogs"
+            render={() => (
+              <Dialogs
+                messageData={props.messageData}
+                dialogsData={props.dialogsData}
+              />
+            )}
+          />
+          <Route
+            path="/profile"
+            render={() => <Profile postsData={props.postsData} />}
+          />
         </div>
         <Footer />
       </div>
