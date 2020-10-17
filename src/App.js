@@ -5,7 +5,6 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import NavBar from "./components/navbar/NavBar";
-
 import Profile from "./components/profile/Profile";
 
 const App = (props) => {
@@ -17,16 +16,11 @@ const App = (props) => {
         <div className="content">
           <Route
             path="/dialogs"
-            render={() => (
-              <Dialogs
-                messageData={props.messageData}
-                dialogsData={props.dialogsData}
-              />
-            )}
+            render={() => <Dialogs state={props.state.dialogsPage} />}
           />
           <Route
             path="/profile"
-            render={() => <Profile postsData={props.postsData} />}
+            render={() => <Profile state={props.state.profilePage} />}
           />
         </div>
         <Footer />

@@ -12,7 +12,7 @@ const MyPosts = (props) => {
       <div>My Posts</div>
       <div>
         <textarea></textarea>
-        <button>Add post</button>
+        <div className={classes.but}><button>Add post</button></div>
       </div>
       {postsElement}
     </div>
