@@ -7,9 +7,10 @@ import Header from "./components/header/Header";
 import NavBar from "./components/navbar/NavBar";
 import Profile from "./components/profile/Profile";
 
+
 const App = (props) => {
   return (
-    <BrowserRouter>
+    
       <div className="wrapper">
         <Header />
         <NavBar />
@@ -20,12 +21,12 @@ const App = (props) => {
           />
           <Route
             path="/profile"
-            render={() => <Profile state={props.state.profilePage} />}
+            render={() => <Profile state={props.state.profilePage} addPost={props.addPost} />}
           />
         </div>
         <Footer />
       </div>
-    </BrowserRouter>
+    
   );
 };
 
