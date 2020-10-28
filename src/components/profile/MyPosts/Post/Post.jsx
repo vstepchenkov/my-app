@@ -5,7 +5,7 @@ const Post = (props) => {
   return (
     <div className={classes.item}>
       <img
-        src="https://assets.teenvogue.com/photos/5d7bfe81abe11a0009d60c2a/16:9/w_2560%2Cc_limit/ava-lede.jpg"
+        src="https://cdn.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg"
         alt="ava"
       />
       <span>{props.message}</span>

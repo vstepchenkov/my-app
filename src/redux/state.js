@@ -17,13 +17,13 @@ let state = {
   { id: 4, message: "Sorry." },
         ],
         dialogsData: [
-  { id: 1, name: "Sasha" },
-  { id: 2, name: "Vita" },
-  { id: 3, name: "Oleg" },
-  { id: 4, name: "Sveta" },
-  { id: 5, name: "Petro" },
-  { id: 6, name: "Sasha" },
-            { id: 7, name: "Max" },
+    { id: 1, name: "Sasha" },
+    { id: 2, name: "Vita" },
+    { id: 3, name: "Oleg" },
+    { id: 4, name: "Sveta" },
+    { id: 5, name: "Petro" },
+    { id: 6, name: "Sasha" },
+    { id: 7, name: "Max" },
         ]
     }   
 }
@@ -35,6 +35,15 @@ export let addPost = (postMessage) => {
         likeCount: 0,
     };
     state.profilePage.postsData.push(newPost);
+    rerenderEntireTree(state);
+}
+
+export let sendMessage = (postMessage) => {
+    let newMessage = {
+        id: 5,
+        message: postMessage,
+    };
+    state.dialogsPage.messageData.push(newMessage);
     rerenderEntireTree(state);
 }
 

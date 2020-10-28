@@ -14,9 +14,10 @@ const Dialogs = (props) => {
 
   let newPostElement = React.createRef();
 
-  let addPost = () => {
+  let sendMessage = () => {
     let text = newPostElement.current.value;
-    alert(text);
+    props.sendMessage(text);
+    newPostElement.current.value = '';
   };
 
   return (
@@ -27,12 +28,10 @@ const Dialogs = (props) => {
           <div>{messageElement}</div>
           <div className={classes.text}>
             <textarea ref={newPostElement} className={classes.text__area}></textarea>
-            <div><button onClick={ addPost }>Send message</button></div>
+            <div><button onClick={ sendMessage }>Send message</button></div>
           </div>
         </div>
-        
       </div>
-      
     </div>  
   );
 };
