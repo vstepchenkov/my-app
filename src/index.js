@@ -10,14 +10,11 @@ import { BrowserRouter, Route } from "react-router-dom";
 
 let rerenderEntireTree = (state) => {
   ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-        <App state={state} addPost={store.addPost.bind(store)}
-          sendMessage={store.sendMessage.bind(store)}
-          updateNewPostText={store.updateNewPostText.bind(store)} />
-    </BrowserRouter>  
-  </React.StrictMode>,
-  document.getElementById("root")
+    
+          <BrowserRouter>   
+            <App state={state} dispatch={store.dispatch.bind(store)}/>
+          </BrowserRouter>,
+    document.getElementById("root")
   );  
 }
 
