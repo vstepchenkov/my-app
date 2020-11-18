@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Dialogs.module.css";
 import DialogUser from "./DialogUser/DialogUser";
 import DialogMessage from "./DialogMessage/DialogMessage";
+import { updateNewMessageText } from "../../redux/state";
 
 const Dialogs = (props) => {
   let dialogsElement = props.state.dialogsData.map((dialog) => (
@@ -14,11 +15,17 @@ const Dialogs = (props) => {
 
   let newPostElement = React.createRef();
 
-  let sendMessage = () => {
+  let onChangeMessageText = () => {
     let text = newPostElement.current.value;
+    props.dispatch(updateNewMessageText(text))
+  }
+
+  let sendMessage = () => {
+    //let text = newPostElement.current.value;
     //props.sendMessage(text);
     //newPostElement.current.value = '';
     props.dispatch({ type: "SEND-MESSAGE" })
+
   };
 
   return (
@@ -28,7 +35,8 @@ const Dialogs = (props) => {
         <div className={`${classes.dialogs__messages}`}>
           <div>{messageElement}</div>
           <div className={classes.text}>
-            <textarea ref={newPostElement} className={classes.text__area}></textarea>
+            <textarea ref={newPostElement} className={classes.text__area}
+              value={props.newMessageText} onChange={onChangeMessageText}></textarea>
             <div><button onClick={ sendMessage }>Send message</button></div>
           </div>
         </div>

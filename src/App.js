@@ -10,14 +10,14 @@ import Profile from "./components/profile/Profile";
 
 const App = (props) => {
   return (
-    
       <div className="wrapper">
         <Header />
         <NavBar />
         <div className="content">
           <Route
             path="/dialogs"
-            render={() => <Dialogs state={props.state.dialogsPage} dispatch={props.dispatch} />}
+          render={() => <Dialogs state={props.state.dialogsPage} dispatch={props.dispatch}
+            newMessageText={props.state.dialogsPage.newMessageText} />}
           />
           <Route
             path="/profile"
@@ -26,7 +26,6 @@ const App = (props) => {
         </div>
         <Footer />
       </div>
-    
   );
 };
 
