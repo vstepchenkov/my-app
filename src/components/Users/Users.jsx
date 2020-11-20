@@ -1,3 +1,4 @@
+import classes from "./Users.module.css";
 import React from "react";
 
 let Users = (props) => {
@@ -26,25 +27,26 @@ let Users = (props) => {
     
     return (
         props.users.map (u => <div key ={u.id}> 
-            <div>Users</div>
-            <div>
-                <span>
-                    <div><img src={u.photoUrl} /></div>
+            <div className={classes.main}>
+                <div>
+                    <div>
+                        <img src={u.photoURL} className={classes.photo} />
+                    </div>
                     <div>{u.followed
-                        ? <button onClick={() => { props.followAC(u.id) }}>Follow</button>
-                        : <button onClick={() => { props.unfollowAC(u.id) }}>Unollow</button>}
+                        ? <button onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
+                        : <button onClick={() => { props.follow(u.id) }}>Follow</button>}
                     </div> 
-                </span>
-                <span>
-                    <span>
+                </div>
+                <div>
+                    <div>
                         <div>FullName</div>
                         <div>Status</div>
-                    </span>
-                    <span>
+                    </div>
+                    <div>
                         <div>Country</div>
                         <div>City</div>
-                    </span>
-                </span>
+                    </div>
+                </div>
             </div>
         </div>)
     )

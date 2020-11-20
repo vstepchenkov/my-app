@@ -27,7 +27,7 @@ const App = (props) => {
           />
           <Route
             path="/users"
-            render={() => <UsersConteiner />}
+          render={() => <UsersConteiner userPage={props.state.userPage} dispatch={props.dispatch}/>}
           />
         </div>
         <Footer />

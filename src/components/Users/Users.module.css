@@ -1,0 +1,8 @@
+.photo {
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
+.main {
+  display: flex;
+}
