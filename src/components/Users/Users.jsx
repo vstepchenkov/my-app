@@ -28,23 +28,23 @@ let Users = (props) => {
     return (
         props.users.map (u => <div key ={u.id}> 
             <div className={classes.main}>
-                <div>
-                    <div>
+                <div className={classes.avaButt}>
+                    <div className={classes.ava}>
                         <img src={u.photoURL} className={classes.photo} />
                     </div>
-                    <div>{u.followed
+                    <div className={classes.butt}>{u.followed
                         ? <button onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
                         : <button onClick={() => { props.follow(u.id) }}>Follow</button>}
                     </div> 
                 </div>
-                <div>
-                    <div>
-                        <div>FullName</div>
-                        <div>Status</div>
+                <div className={classes.info}>
+                    <div className={classes.info__name}>
+                        <div className={classes.info__item}>FullName</div>
+                        <div className={classes.info__item}>Status</div>
                     </div>
-                    <div>
-                        <div>Country</div>
-                        <div>City</div>
+                    <div className={classes.info__location}>
+                        <div className={classes.info__item}>Country</div>
+                        <div className={classes.info__item}>City</div>
                     </div>
                 </div>
             </div>
