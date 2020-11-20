@@ -6,6 +6,8 @@ import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import NavBar from "./components/navbar/NavBar";
 import Profile from "./components/profile/Profile";
+import Users from "./components/Users/Users";
+import UsersConteiner from "./components/Users/UsersConteiner";
 
 
 const App = (props) => {
@@ -16,12 +18,16 @@ const App = (props) => {
         <div className="content">
           <Route
             path="/dialogs"
-          render={() => <Dialogs state={props.state.dialogsPage} dispatch={props.dispatch}
+            render={() => <Dialogs state={props.state.dialogsPage} dispatch={props.dispatch}
             newMessageText={props.state.dialogsPage.newMessageText} />}
           />
           <Route
             path="/profile"
             render={() => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>}
+          />
+          <Route
+            path="/users"
+            render={() => <UsersConteiner />}
           />
         </div>
         <Footer />

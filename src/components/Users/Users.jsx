@@ -25,14 +25,14 @@ let Users = (props) => {
     }
     
     return (
-        props.users.map (u => <div key=u.id> 
+        props.users.map (u => <div key ={u.id}> 
             <div>Users</div>
             <div>
                 <span>
                     <div><img src={u.photoUrl} /></div>
                     <div>{u.followed
-                        ? <button onClick={() => { props.follow(u.id) }}>Follow</button>
-                        : <button onClick={() => { props.unfollow(u.id) }}>Unollow</button>}
+                        ? <button onClick={() => { props.followAC(u.id) }}>Follow</button>
+                        : <button onClick={() => { props.unfollowAC(u.id) }}>Unollow</button>}
                     </div> 
                 </span>
                 <span>
